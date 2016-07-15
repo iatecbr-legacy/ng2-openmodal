@@ -1,6 +1,6 @@
 ﻿import { OnInit, Injectable, Injector, ViewContainerRef, ViewChild, DynamicComponentLoader } from "@angular/core";
-import { ModalComponent, ModalResult, ModalParams } from './modal.component';
-// import { ModalParams } from './modal-params'
+import { ModalComponent } from './modal.component';
+import { ModalParams } from './modal-params'
 
 @Injectable()
 export class ModalService {
@@ -17,14 +17,14 @@ export class ModalService {
     registerPlacement(container: ViewContainerRef) {
         this.container = container;
     }
-    showModal(componentType: any, title: string, contentParameters: any = {}): Promise<any> {
+    openModal(componentType: any, title: string, contentParams: any = {}): Promise<any> {
       let params = new ModalParams();
       params.componentType = componentType;
       params.title = title;
-      params.contentParameters = contentParameters;
-      return this.showModalAdvanced(params);
+      params.contentParams = contentParams;
+      return this.openModalAdvanced(params);
     }
-    showModalAdvanced(modalParams: ModalParams): Promise<any> {
+    openModalAdvanced(modalParams: ModalParams): Promise<any> {
       let promise = new Promise((resolve, reject) => {
         this.dynamicComponentLoader.loadNextToLocation(this.modalComponentType, this.container).then(comp => {
           let modal = <ModalComponent>comp.instance;
@@ -34,7 +34,7 @@ export class ModalService {
             setTimeout(()=> comp.destroy(), result.timeBeforeDestroy);
           });
           this.modals.push(modal);
-          modal.show(modalParams);
+          modal.open(modalParams);
         });
       });
       return promise;

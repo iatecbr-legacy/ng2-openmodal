@@ -1,6 +1,6 @@
 {
   "name": "ng2-openmodal",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "A customizeble modal for Angular 2",
   "main": "index.js",
   "dependencies": {},

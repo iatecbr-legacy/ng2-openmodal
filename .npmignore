@@ -1,0 +1,11 @@
+.npmignore
+.gitignore
+
+typings/
+tsconfig.json
+typings.json
+
+!/**/*.d.ts
+/**/*.ts
+
+*.tgz

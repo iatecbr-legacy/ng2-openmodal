@@ -7,10 +7,9 @@
         "experimentalDecorators": true,
         "sourceMap": true,
         "declaration": true,
-        "moduleResolution": "node",
-        "outDir": "../dist"
+        "moduleResolution": "node"
     },
     "files": [
-        "src/index.ts"
+        "index.ts"
     ]
 }

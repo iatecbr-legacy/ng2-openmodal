@@ -1,3 +1,7 @@
 dist/
 node_modules/
 typings/
+
+/**/*.js
+/**/*.map
+/**/*.d.ts
