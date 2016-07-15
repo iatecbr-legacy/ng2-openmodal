@@ -1,6 +1,8 @@
 ﻿import { OnInit, Injectable, Injector, ViewContainerRef, ViewChild, DynamicComponentLoader } from "@angular/core";
 import { ModalComponent } from './modal.component';
 import { ModalParams } from './modal-params'
+import { ModalConfirmationComponent } from './modal-confirmation.component'
+import { ModalAlertComponent } from './modal-alert.component'
 
 @Injectable()
 export class ModalService {
@@ -8,13 +10,21 @@ export class ModalService {
     private container: ViewContainerRef;
     private modals: ModalComponent[] = new Array<ModalComponent>();
     private modalComponentType: any = ModalComponent;
-    constructor(private dynamicComponentLoader: DynamicComponentLoader, injector: Injector) {
+    private alertComponentType: any = ModalAlertComponent;
+    private confirmationComponentType: any = ModalConfirmationComponent;
 
+    constructor(private dynamicComponentLoader: DynamicComponentLoader, injector: Injector) {
     }
-    setModalComponentType(modalComponentType: any) {
+    setModalLayout(modalComponentType: any) {
       this.modalComponentType = modalComponentType;
     }
-    registerPlacement(container: ViewContainerRef) {
+    setAlertComponent(alertComponentType: any) {
+      this.alertComponentType = alertComponentType;
+    }
+    setConfirmComponent(confirmationComponentType: any) {
+      this.confirmationComponentType = confirmationComponentType;
+    }
+    setPlacement(container: ViewContainerRef) {
         this.container = container;
     }
     openModal(componentType: any, title: string, contentParams: any = {}): Promise<any> {
@@ -38,6 +48,12 @@ export class ModalService {
         });
       });
       return promise;
+    }
+    openAlert(title: string, message: string) {
+      return this.openModal(this.alertComponentType, title, {message: message});
+    }
+    openConfirmation(title: string, message: string) {
+      return this.openModal(this.confirmationComponentType, title, {message: message});
     }
     dismissAll() {
       let temp = this.modals;

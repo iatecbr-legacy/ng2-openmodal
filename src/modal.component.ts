@@ -5,7 +5,8 @@ import { ModalParams } from './modal-params';
 import { ModalResult } from './modal-result';
 
 @Component({
-  selector: 'app-modal',
+  moduleId: module.id,
+  selector: 'ng2-openmodal',
   templateUrl: 'modal.component.html',
   styleUrls: ['modal.component.css']
 })

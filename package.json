@@ -1,6 +1,6 @@
 {
   "name": "ng2-openmodal",
-  "version": "0.1.1",
+  "version": "0.2.5",
   "description": "A customizeble modal for Angular 2",
   "main": "index.js",
   "dependencies": {},
@@ -12,7 +12,7 @@
     "zone.js": "^0.6.12"
   },
   "scripts": {
-    "prepublish": "typings install & tsc"
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
