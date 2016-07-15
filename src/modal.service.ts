@@ -3,6 +3,7 @@ import { ModalComponent } from './modal.component';
 import { ModalParams } from './modal-params'
 import { ModalConfirmationComponent } from './modal-confirmation.component'
 import { ModalAlertComponent } from './modal-alert.component'
+import { ThenElse } from './then-else'
 
 @Injectable()
 export class ModalService {
@@ -27,15 +28,15 @@ export class ModalService {
     setPlacement(container: ViewContainerRef) {
         this.container = container;
     }
-    openModal(componentType: any, title: string, contentParams: any = {}): Promise<any> {
+    openModal(componentType: any, title: string, contentParams: any = {}): ThenElse<any> {
       let params = new ModalParams();
       params.componentType = componentType;
       params.title = title;
       params.contentParams = contentParams;
       return this.openModalAdvanced(params);
     }
-    openModalAdvanced(modalParams: ModalParams): Promise<any> {
-      let promise = new Promise((resolve, reject) => {
+    openModalAdvanced(modalParams: ModalParams): ThenElse<any> {
+      let r = new ThenElse((resolve, reject) => {
         this.dynamicComponentLoader.loadNextToLocation(this.modalComponentType, this.container).then(comp => {
           let modal = <ModalComponent>comp.instance;
           modal.closed.subscribe((result: any) => {
@@ -47,7 +48,7 @@ export class ModalService {
           modal.open(modalParams);
         });
       });
-      return promise;
+      return r;
     }
     openAlert(title: string, message: string) {
       return this.openModal(this.alertComponentType, title, {message: message});
