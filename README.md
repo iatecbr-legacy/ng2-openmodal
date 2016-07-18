@@ -5,6 +5,18 @@ A customizable modal for Angular 2
 
 It uses the Bootstrap modal by default. You can also provide a custom modal view.
 
+## Features List
+- [x] Default bootstrap modal layout
+- [x] Customizable modal layout
+- [x] Alert dialog
+- [x] Customizable Alert component
+- [x] Confirmation dialog
+- [x] Customizable Confirmation component
+- [x] Dialog result callback
+- [x] Dialog dismiss callback
+- [x] Dismiss validation
+- [ ] Good documentation
+
 ## Basic Usage
 1. Install the package `ng2-openmodal`
 ```bash
@@ -42,10 +54,10 @@ this.modalService.setPlacement(this.modalPlacement);
 1. **TODO** Invoke `ModalService.openModal`
 1. Enjoy it!
 
-## Modal response
+## **TODO** Modal response
 ### **TODO** The `ThenElse` class
 
-## Additional
+## **TODO** Additional features
 
 ## `ModalService` methods
 - **TODO** `setModalLayout(type)`:
@@ -53,15 +65,3 @@ this.modalService.setPlacement(this.modalPlacement);
 - **TODO** `setConfirmComponent(type)`:
 - **TODO** `setPlacement(container: ViewContainerRef)`:
 - **TODO** `openModal(componentType: any, title: string, contentParams?: any): ThenElse<any>`
-
-## Features
-[x] Default bootstrap modal layout
-[x] Customizable modal layout
-[x] Alert dialog
-[x] Customizable Alert component
-[x] Confirmation dialog
-[x] Customizable Confirmation component
-[x] Dialog result callback
-[x] Dialog dismiss callback
-[x] Dismiss validation
-[ ] Good documentation
