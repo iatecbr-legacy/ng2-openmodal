@@ -16,14 +16,14 @@ export class ModalService {
 
     constructor(private dynamicComponentLoader: DynamicComponentLoader, injector: Injector) {
     }
-    setModalLayout(modalComponentType: any) {
-      this.modalComponentType = modalComponentType;
+    setModalLayout(type: any) {
+      this.modalComponentType = type;
     }
-    setAlertComponent(alertComponentType: any) {
-      this.alertComponentType = alertComponentType;
+    setAlertComponent(type: any) {
+      this.alertComponentType = type;
     }
-    setConfirmComponent(confirmationComponentType: any) {
-      this.confirmationComponentType = confirmationComponentType;
+    setConfirmComponent(type: any) {
+      this.confirmationComponentType = type;
     }
     setPlacement(container: ViewContainerRef) {
         this.container = container;
@@ -50,10 +50,10 @@ export class ModalService {
       });
       return r;
     }
-    openAlert(title: string, message: string) {
+    openAlert(message: string, title: string) {
       return this.openModal(this.alertComponentType, title, {message: message});
     }
-    openConfirmation(title: string, message: string) {
+    openConfirmation(message: string, title: string) {
       return this.openModal(this.confirmationComponentType, title, {message: message});
     }
     dismissAll() {

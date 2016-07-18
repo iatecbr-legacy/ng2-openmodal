@@ -10,7 +10,7 @@ import { ModalDialog } from './modal-dialog';
 export class ModalConfirmationComponent implements ModalContent {
   modal: ModalDialog;
   message: string;
-  onContentInit(modal: ModalDialog, parameters: any) {
+  onModalContentInit(modal: ModalDialog, parameters: any) {
     this.modal = modal;
     if ('message' in parameters) {
       this.message = parameters.message;

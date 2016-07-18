@@ -10,7 +10,7 @@ export class ThenElse<T>  {
     this.done = false;
     this.value = null;
     this.failure = false;
-    task(this.resolve, this.reject);
+    task(x => this.resolve(x), x => this.reject(x));
   }
   private resolve(value: T) {
     if (!this.done) {

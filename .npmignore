@@ -9,3 +9,5 @@ typings.json
 !/**/*.d.ts
 
 *.tgz
+
+demo/

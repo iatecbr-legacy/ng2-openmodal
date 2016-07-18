@@ -27,7 +27,7 @@ export class ModalComponent implements ModalDialog {
         .then(comp => {
           // TODO: Checks if implements the interface
           let modalContent = <ModalContent>comp.instance;
-          modalContent.onContentInit(this, modalParams.contentParams);
+          modalContent.onModalContentInit(this, modalParams.contentParams);
           this.dismiss = () => {
             if (this.dismissable(modalContent)) this.internalDismiss();
           }
