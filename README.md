@@ -39,19 +39,29 @@ import { ModalService } from 'ng2-openmodal';
 
 this.modalService.setPlacement(this.modalPlacement);
 ```
-1. Invoke `ModalService.openModal` **TODO**
+1. **TODO** Invoke `ModalService.openModal`
 1. Enjoy it!
 
 ## Modal response
-### The `ThenElse` class
+### **TODO** The `ThenElse` class
 
 ## Additional
 
 ## `ModalService` methods
-- `setModalLayout(type)`:
-- `setAlertComponent(type)`:
-- `setConfirmComponent(type)`:
-- `setPlacement(container: ViewContainerRef)`:
-- `openModal(componentType: any, title: string, contentParams?: any): ThenElse<any>`
+- **TODO** `setModalLayout(type)`:
+- **TODO** `setAlertComponent(type)`:
+- **TODO** `setConfirmComponent(type)`:
+- **TODO** `setPlacement(container: ViewContainerRef)`:
+- **TODO** `openModal(componentType: any, title: string, contentParams?: any): ThenElse<any>`
 
-TODO: complete the documentation.
+## Features
+[x] Default bootstrap modal layout
+[x] Customizable modal layout
+[x] Alert dialog
+[x] Customizable Alert component
+[x] Confirmation dialog
+[x] Customizable Confirmation component
+[x] Dialog result callback
+[x] Dialog dismiss callback
+[x] Dismiss validation
+[ ] Good documentation
