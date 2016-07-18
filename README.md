@@ -1,7 +1,7 @@
-ng2-openmodal
+ng2-openmodal [![npm version](https://badge.fury.io/js/ng2-openmodal.svg)](https://badge.fury.io/js/ng2-openmodal)
 ======================
 A customizable modal for Angular 2
-[![npm version](https://badge.fury.io/js/ng2-openmodal.svg)](https://badge.fury.io/js/ng2-openmodal)
+
 
 It uses the Bootstrap modal by default. You can also provide a custom modal view.
 
