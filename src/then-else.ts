@@ -1,3 +1,4 @@
+// https://gist.github.com/andregsilv/8e157583965b7af00d5ef975b9569cff
 export class ThenElse<T>  {
   private done: boolean;
   private value: any;
