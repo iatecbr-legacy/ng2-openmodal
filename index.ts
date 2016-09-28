@@ -8,3 +8,4 @@ export * from './src/modal-alert.component';
 export * from './src/modal-confirmation.component';
 
 export * from './src/modal.service';
+export * from './src/ng2-openmodal.module';

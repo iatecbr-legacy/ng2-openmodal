@@ -1,4 +1,4 @@
-import { Component, DynamicComponentLoader, ViewChild, ViewContainerRef, EventEmitter, Output } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, EventEmitter, Output, ComponentFactoryResolver } from '@angular/core';
 import { ModalContent } from './modal-content';
 import { ModalDialog } from './modal-dialog';
 import { ModalParams } from './modal-params';
@@ -18,21 +18,22 @@ export class ModalComponent implements ModalDialog {
   timeBeforeDestroy: number = 500;
   @ViewChild('contentPlacement', {read: ViewContainerRef}) contentPlacement: ViewContainerRef;
 
-  constructor(private componentLoader: DynamicComponentLoader) {
+  constructor(private resolver: ComponentFactoryResolver) {
   }
   open(modalParams: ModalParams) {
     this.title = modalParams.title;
     this.dismissable = modalParams.dismissable;
-    this.componentLoader.loadNextToLocation(modalParams.componentType, this.contentPlacement)
-        .then(comp => {
-          // TODO: Checks if implements the interface
-          let modalContent = <ModalContent>comp.instance;
-          modalContent.onModalContentInit(this, modalParams.contentParams);
-          this.dismiss = () => {
-            if (this.dismissable(modalContent)) this.internalDismiss();
-          }
-          this.visible = true;
-        });
+
+    let modalContentFactory = this.resolver.resolveComponentFactory(modalParams.componentType)
+    let contentRef = this.contentPlacement.createComponent(modalContentFactory);
+    let content = <ModalContent>contentRef.instance;
+
+    // TODO: Checks if implements the interface
+    content.onModalContentInit(this, modalParams.contentParams);
+    this.dismiss = () => {
+      if (this.dismissable(content)) this.internalDismiss();
+    }
+    this.visible = true;
   }
   private internalDismiss() {
     this.visible = false;
