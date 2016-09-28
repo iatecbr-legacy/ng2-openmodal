@@ -1,4 +1,4 @@
-import { Component, DynamicComponentLoader, ViewChild, ViewContainerRef, Injector, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, DynamicComponentLoader, ViewChild, ViewContainerRef, EventEmitter, Output } from '@angular/core';
 import { ModalContent } from './modal-content';
 import { ModalDialog } from './modal-dialog';
 import { ModalParams } from './modal-params';

@@ -1,4 +1,4 @@
-﻿import { OnInit, Injectable, Injector, ViewContainerRef, ViewChild, DynamicComponentLoader } from "@angular/core";
+﻿import { Injectable, Injector, ViewContainerRef, DynamicComponentLoader } from "@angular/core";
 import { ModalComponent } from './modal.component';
 import { ModalParams } from './modal-params'
 import { ModalConfirmationComponent } from './modal-confirmation.component'
