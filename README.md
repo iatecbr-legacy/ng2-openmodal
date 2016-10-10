@@ -51,17 +51,17 @@ import { ModalService } from 'ng2-openmodal';
 
 this.modalService.setPlacement(this.modalPlacement);
 ```
-1. **TODO** Invoke `ModalService.openModal`
+1. Invoke `ModalService.openModal`. **TODO** Improve documentation
 1. Enjoy it!
 
-## **TODO** Modal response
-### **TODO** The `ThenElse` class
+## **TODO** Documentation of Modal response
+### **TODO** documentation of the `ThenElse` class
 
 ## **TODO** Additional features
 
 ## `ModalService` methods
-- **TODO** `setModalLayout(type)`:
-- **TODO** `setAlertComponent(type)`:
-- **TODO** `setConfirmComponent(type)`:
-- **TODO** `setPlacement(container: ViewContainerRef)`:
-- **TODO** `openModal(componentType: any, title: string, contentParams?: any): ThenElse<any>`
+- **TODO** documentation of `setModalLayout(type)`:
+- **TODO** documentation of `setAlertComponent(type)`:
+- **TODO** documentation of `setConfirmComponent(type)`:
+- **TODO** documentation of `setPlacement(container: ViewContainerRef)`:
+- **TODO** documentation of `openModal(componentType: any, title: string, contentParams?: any): ThenElse<any>`
